@@ -1,1 +1,11 @@
 ---
+- name: Clone Repos locally
+  ansible.builtin.git:
+    repo: "{{ item.0.server }}:{{ item.0.user }}/{{ item.1.name }}.git"
+    dest: "{{ item.0.dest }}/{{ item.1.name }}"
+    update: yes
+  # with_subelements explanation
+  # https://stackoverflow.com/questions/41908715/ansible-with-subelements
+  with_subelements:
+    - "{{ git_clone_repos }}"
+    - repos

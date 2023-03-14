@@ -6,11 +6,11 @@ name: CI
     branches:
       - main
   schedule:
-    - cron: "0 7 * * 0"
+    - cron: "30 6 * * 1"
 
 defaults:
   run:
-    working-directory: 'iancleary.template'
+    working-directory: 'iancleary.git-repos'
 
 jobs:
 
@@ -21,7 +21,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'iancleary.template'
+          path: 'iancleary.git-repos'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -34,7 +34,6 @@ jobs:
       - name: Lint code.
         run: |
           yamllint .
-          ansible-lint
 
   molecule:
     name: Molecule
@@ -42,14 +41,16 @@ jobs:
     strategy:
       matrix:
         distro:
+          - rockylinux8
+          - centos7
           - ubuntu2204
-          - ubuntu2004
+          - debian11
 
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'iancleary.template'
+          path: 'iancleary.git-repos'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2

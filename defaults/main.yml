@@ -1,2 +1,7 @@
 ---
-defaults: add_them_here
+git_clone_repos:
+  - dest: "~/Automation/Ansible"
+    server: "git@github.com"
+    user: "iancleary"
+    update: "yes"
+    repos: []
