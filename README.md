@@ -1,19 +1,19 @@
-ansible-role-template
+ansible-role-git-repos
 =========
 
 <p align="center">
 
-<a href="https://github.com/iancleary/ansible-role-template/actions?query=workflow%3Aci" target="_blank">
-    <img src="https://github.com/iancleary/ansible-role-template/workflows/CI/badge.svg" alt="CI workflow status">
+<a href="https://github.com/iancleary/ansible-role-git-repos/actions?query=workflow%3Aci" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-git-repos/workflows/CI/badge.svg" alt="CI workflow status">
 </a>
 
-<a href="https://github.com/iancleary/ansible-role-template/actions?query=workflow%3Arelease" target="_blank">
-    <img src="https://github.com/iancleary/ansible-role-template/workflows/Release/badge.svg" alt="Release workflow status">
+<a href="https://github.com/iancleary/ansible-role-git-repos/actions?query=workflow%3Arelease" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-git-repos/workflows/Release/badge.svg" alt="Release workflow status">
 </a>
-<a href="https://galaxy.ansible.com/iancleary/template" target="_blank">
-    <img src="https://img.shields.io/badge/ansible--galaxy-iancleary.template-blue.svg" alt="Ansible Galaxy">
+<a href="https://galaxy.ansible.com/iancleary/git-repos" target="_blank">
+    <img src="https://img.shields.io/badge/ansible--galaxy-iancleary.git-repos-blue.svg" alt="Ansible Galaxy">
 </a>
-<a href="https://raw.githubusercontent.com/iancleary/ansible-role-template/main/LICENSE" target="_blank">
+<a href="https://raw.githubusercontent.com/iancleary/ansible-role-git-repos/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
 </p>
