@@ -10,9 +10,7 @@ ansible-role-git-repos
 <a href="https://github.com/iancleary/ansible-role-git-repos/actions?query=workflow%3Arelease" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-git-repos/workflows/Release/badge.svg" alt="Release workflow status">
 </a>
-<a href="https://galaxy.ansible.com/iancleary/git-repos" target="_blank">
-    <img src="https://img.shields.io/badge/ansible--galaxy-iancleary.git-repos-blue.svg" alt="Ansible Galaxy">
-</a>
+
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-git-repos/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
