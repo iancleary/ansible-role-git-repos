@@ -43,7 +43,7 @@ jobs:
         distro:
           - rockylinux8
           - centos7
-          - ubuntu2004
+          - ubuntu2204
           - debian11
 
     steps:

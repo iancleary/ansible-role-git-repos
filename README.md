@@ -18,19 +18,14 @@ ansible-role-git-repos
 </a>
 </p>
 
-This role installs `add description here`.
+This role clones git repositories according to the role's variables.  It will install from one or multple combinations of remote git servers, users, organizations, etc. and can install each group into it's own folder.
+
+> Only cloning via ssh is supported, at the current moment, as that was my initial use case.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here.
-
-Supported and Tested `ansible_os_families`:
-
-* Ubuntu 22.04
-* Ubuntu 20.04
-
-> Pull Requests welcome!
+`git` should be installed.  See the [geerlingguy.git](https://github.com/geerlingguy/ansible-role-git) ansible role for that!
 
 Role Variables
 --------------
@@ -91,9 +86,7 @@ A longer setup, to show mutliple items in the top level list:
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
-N/A
+`git` needs to be installed; the role `geerlingguy.git` is suggested.
 
 Example Playbook
 ----------------
@@ -104,6 +97,7 @@ Including an example of how to use your role (for instance, with variables passe
 - hosts: servers
   user: unprivelaged
   roles:
+    - role: geerlingguy.git
     - role: iancleary.git-repos
 ```
 
@@ -113,8 +107,11 @@ Including an example of how to use your role (for instance, with variables passe
 - hosts: servers
   user: root
   roles:
+    - role: geerlingguy.git
     - role: iancleary.git-repos
 ```
+
+> Note: `"- role: geerlingguy.git"` is only there to ensure `git` is installed.  You may remove that line, if `git` is installed by some other method.
 
 License
 -------
