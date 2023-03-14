@@ -10,7 +10,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: 'iancleary.template'
+    working-directory: 'iancleary.git-repos'
 
 jobs:
 

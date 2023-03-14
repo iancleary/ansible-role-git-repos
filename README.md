@@ -37,10 +37,56 @@ Role Variables
 
 A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
+`git_clone_repos` is a list of dictionaries:
+
+* `dest`: Folder to clone this list items `repos` into
+* `server`: `git@github.com` equivalent for your server, e.g. `git@git.company.com` or `git@gitlab.org`, etc.
+* `user`: user or organization for this list item.  `username` or `org-name`
+* `update`: truthy value of whether or not to update the repo, if false, it just checks if the repo exists locally
+* `repo`: list of strings that are the repo names
+
+For example, `git@github.com:/iancleary/ansible-role-git-repos.git` would use:
+
 ```yaml
 ---
-add variables here
+git_clone_repos:
+  - dest: "~/Automation/Ansible"
+    server: "git@github.com"
+    user: "iancleary"
+    update: "yes"
+    repos:
+      - name: "ansible-role-git-repos"
 ```
+
+A longer setup, to show mutliple items in the top level list:
+
+```yaml
+  - dest: "~/Marketing/"
+    server: "git@github.com"
+    user: "iancleary"
+    update: "yes"
+    repos:
+      - name: "iancleary"
+  - dest: "~/Operations/"
+    server: "git@github.com"
+    user: "iancleary"
+    update: "yes"
+    repos:
+      - name: "unraid-tailscale"
+  - dest: "~/Development/"
+    server: "git@github.com"
+    user: "iancleary"
+    update: "yes"
+    repos:
+      - name: "ivy-lee-backend"
+  - dest: "~/Pictures/"
+    server: "git@github.com"
+    user: "iancleary"
+    update: "yes"
+    repos:
+      - name: "backgrounds"
+```
+
 
 Dependencies
 ------------
@@ -58,15 +104,16 @@ Including an example of how to use your role (for instance, with variables passe
 - hosts: servers
   user: unprivelaged
   roles:
-    - role: iancleary.template
-      become: true
+    - role: iancleary.git-repos
 ```
+
+> This role doesn't need to be run as root, use whatever user you want to clone the repos as.
 
 ```yaml
 - hosts: servers
   user: root
   roles:
-    - role: iancleary.template
+    - role: iancleary.git-repos
 ```
 
 License
@@ -77,6 +124,6 @@ License
 Author Information
 ------------------
 
-This role was created in 2021 by [Ian Cleary](https://iancleary.me).
+This role was created in 2023 by [Ian Cleary](https://iancleary.me).
 
 Inspiration for the structure of this repo came from [Jeff Geerling](https://github.com/geerlingguy/ansible-role-nginx).
