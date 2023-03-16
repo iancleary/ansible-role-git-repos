@@ -96,8 +96,10 @@ Including an example of how to use your role (for instance, with variables passe
   user: unprivelaged
   roles:
     - role: geerlingguy.git
-    - role: iancleary.git-repos
+    - role: iancleary.git_repos
 ```
+
+**Note the underscore in `git_repos`, it is not a dash!**
 
 > This role doesn't need to be run as root, use whatever user you want to clone the repos as.
 
@@ -106,7 +108,7 @@ Including an example of how to use your role (for instance, with variables passe
   user: root
   roles:
     - role: geerlingguy.git
-    - role: iancleary.git-repos
+    - role: iancleary.git_repos
 ```
 
 > Note: `"- role: geerlingguy.git"` is only there to ensure `git` is installed.  You may remove that line, if `git` is installed by some other method.
